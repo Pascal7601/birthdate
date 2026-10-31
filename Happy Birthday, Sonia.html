@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday, Sonia</title>
+<style>
+:root{--bg:#f2f5ee;--surface:#fbfcf8;--text:#2b3a31;--muted:#6b7f72;--accent:#5f8a6e;--deep:#2f4f3e;--soft:#d3e2d2;--sea:#4a9aa5;--sand:#eadfc6;--line:#dbe5d6;--shadow:0 6px 22px rgba(47,79,62,.14);color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111a15;--surface:#1a2620;--text:#e6f0e8;--muted:#9fb5a6;--accent:#8fc19f;--deep:#cfe6d6;--soft:#2a3d32;--sea:#6cc0cb;--sand:#3a3626;--line:#2c3d33;--shadow:0 6px 22px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111a15;--surface:#1a2620;--text:#e6f0e8;--muted:#9fb5a6;--accent:#8fc19f;--deep:#cfe6d6;--soft:#2a3d32;--sea:#6cc0cb;--sand:#3a3626;--line:#2c3d33;--shadow:0 6px 22px rgba(0,0,0,.4);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,'Times New Roman',serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-weight:normal;margin:0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;gap:4px;justify-content:center;flex-wrap:wrap;padding:10px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(8px)}
+nav a{color:var(--deep);text-decoration:none;font-size:.85rem;padding:5px 12px;border-radius:99px}
+nav a:hover{background:var(--soft)}
+.hero{position:relative;min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px 120px;background:linear-gradient(180deg,var(--soft),var(--bg) 85%);overflow:hidden}
+.hero small{letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.hero h1{font-size:clamp(3rem,14vw,7rem);color:var(--deep);font-style:italic;line-height:1.05}
+.hero p{max-width:440px;color:var(--muted);font-size:1.1rem}
+#cd{margin-top:8px;color:var(--accent);font-size:1.2rem}
+.fl{position:absolute;font-size:2rem;opacity:.55;animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-16px) rotate(6deg)}}
+.waves{position:absolute;left:0;bottom:0;width:100%;height:110px}
+.waves svg{position:absolute;bottom:0;left:0;width:200%;height:100%;animation:wv 12s linear infinite}
+.waves svg+svg{animation-duration:8s;animation-direction:reverse;opacity:.6}
+@keyframes wv{to{transform:translateX(-50%)}}
+.cake{width:200px;margin:6px 0 0;animation:bob 5s ease-in-out infinite;cursor:pointer;overflow:visible}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:fk .45s ease-in-out infinite alternate;cursor:pointer}
+.flame:nth-of-type(2){animation-delay:-.2s}.flame:nth-of-type(3){animation-delay:-.35s}
+@keyframes fk{from{transform:scale(1,1) rotate(-4deg)}to{transform:scale(.88,1.12) rotate(4deg)}}
+.flame.off{display:none}
+#wish{min-height:1.7em;color:var(--accent);font-style:italic;margin:2px 0}
+.btn{background:var(--accent);color:#fff;border:0;border-radius:99px;padding:12px 28px;font:inherit;cursor:pointer;box-shadow:var(--shadow);margin-top:14px}
+.btn.alt{background:var(--sea)}
+section{max-width:780px;margin:0 auto;padding:68px 20px}
+h2{font-size:2.1rem;text-align:center;color:var(--deep);font-style:italic}
+.sub{text-align:center;color:var(--muted);margin:6px 0 36px}
+.rv{opacity:0;transform:translateY(22px);transition:.7s}
+.rv.in{opacity:1;transform:none}
+.card{background:var(--surface);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.ph{height:260px;border-radius:12px;background:linear-gradient(135deg,var(--soft),var(--sand));display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem;margin-bottom:12px;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.tl{position:relative;padding-left:30px;border-left:2px dashed var(--accent);margin-left:10px}
+.ev{position:relative;margin-bottom:34px}
+.ev::before{content:"🌿";position:absolute;left:-46px;top:-2px;background:var(--bg);width:30px;text-align:center}
+.date{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.card h3{font-size:1.25rem}.card p{margin:4px 0 0;color:var(--muted)}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.notes .card b{display:block;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:14px}
+.flip{perspective:800px;height:135px;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit}
+.flip>div{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.flip.on>div{transform:rotateY(180deg)}
+.flip span{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:10px;text-align:center;box-shadow:var(--shadow)}
+.f{background:var(--accent);font-size:2rem}
+.b{background:var(--surface);transform:rotateY(180deg);font-size:.9rem}
+.count{text-align:center;color:var(--muted);margin-top:16px}
+.env{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.env button{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:22px 10px;font:inherit;color:var(--text);cursor:pointer;box-shadow:var(--shadow);transition:.2s}
+.env button:hover{transform:translateY(-4px);border-color:var(--accent)}
+.env .ic{font-size:2.2rem;display:block}.env small{color:var(--muted);display:block;margin-top:4px}
+.env button.read .ic{opacity:.5}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.gal .ph{height:150px;margin:0;cursor:pointer;transition:.2s}.gal .ph:hover{transform:scale(1.03)}
+dialog{border:0;border-radius:18px;max-width:500px;width:calc(100% - 32px);background:var(--surface);color:var(--text);padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(10,25,18,.6)}
+dialog h3{color:var(--deep);font-style:italic;font-size:1.4rem;margin-bottom:10px}
+dialog p{white-space:pre-line;margin:0 0 18px}dialog img{width:100%;border-radius:12px;margin-bottom:14px}
+.ocean{background:linear-gradient(180deg,var(--bg),color-mix(in srgb,var(--sea) 22%,var(--bg)));max-width:none}
+.ocean>div{max-width:740px;margin:0 auto}
+.ocean h2{color:var(--sea)}
+.pass{display:flex;background:var(--surface);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:26px;flex-wrap:wrap}
+.pass .m{flex:1 1 300px;padding:22px;border-top:6px solid var(--sea)}
+.pass .s{flex:0 0 150px;padding:22px;border-left:2px dashed var(--line);display:flex;flex-direction:column;justify-content:center;text-align:center;background:var(--soft)}
+.pass .r{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.pass b{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sea)}
+.pass .big{font-size:1.5rem;color:var(--deep)}
+.dest{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.dest .card{text-align:center;cursor:pointer;transition:.2s}.dest .card:hover{transform:translateY(-4px)}
+.dest .card span{font-size:1.8rem;display:block}
+.fin{text-align:center}.fin .msg{display:none;margin-top:22px;font-size:1.3rem;font-style:italic;color:var(--deep)}
+.fin.show .msg{display:block;animation:fi 1.2s}@keyframes fi{from{opacity:0}}
+.fx{position:fixed;bottom:-40px;pointer-events:none;animation:up 3.4s linear forwards;z-index:60}
+@keyframes up{to{transform:translateY(-115vh) rotate(40deg);opacity:0}}
+.rip{position:fixed;width:20px;height:20px;border:2px solid var(--sea);border-radius:50%;pointer-events:none;animation:rp .9s ease-out forwards;z-index:55}
+@keyframes rp{to{transform:scale(6);opacity:0}}
+footer{text-align:center;color:var(--muted);padding:30px 20px 50px;font-size:.9rem}
+</style>
+</head>
+<body>
+<nav><a href="#story">Our Story</a><a href="#notes">Field Notes</a><a href="#reasons">Reasons</a><a href="#letters">Open When</a><a href="#gallery">Gallery</a><a href="#ocean">The Ocean</a></nav>
+
+<div class="hero">
+  <span class="fl" style="left:8%;top:18%">🐒</span><span class="fl" style="right:9%;top:24%;animation-delay:-2s">🦍</span>
+  <span class="fl" style="left:14%;top:62%;animation-delay:-4s">🍃</span><span class="fl" style="right:15%;top:60%;animation-delay:-1s">🐚</span>
+  <small>Happy Birthday</small>
+  <h1>Sonia</h1>
+  <p>A little jungle-and-ocean corner of the internet, made just for you.</p>
+  <svg class="cake" id="cake" viewBox="0 0 200 190" aria-label="Birthday cake with lit candles">
+    <ellipse cx="100" cy="176" rx="92" ry="10" fill="var(--deep)" opacity=".25"/>
+    <rect x="14" y="120" width="172" height="52" rx="12" fill="var(--accent)"/>
+    <path d="M14 132q14 14 28 0t28 0 28 0 28 0 28 0 28 0 14 8v-12q0-8-8-8H22q-8 0-8 8z" fill="var(--sand)"/>
+    <rect x="42" y="84" width="116" height="40" rx="10" fill="var(--soft)"/>
+    <path d="M42 96q12 12 24 0t24 0 24 0 24 0 18 8v-10q0-8-8-8H50q-8 0-8 8z" fill="var(--surface)"/>
+    <circle cx="40" cy="152" r="5" fill="var(--sand)"/><circle cx="100" cy="156" r="5" fill="var(--sand)"/><circle cx="160" cy="152" r="5" fill="var(--sand)"/>
+    <rect x="73" y="52" width="8" height="34" rx="3" fill="var(--sea)"/><rect x="96" y="48" width="8" height="38" rx="3" fill="var(--sand)"/><rect x="119" y="52" width="8" height="34" rx="3" fill="var(--sea)"/>
+    <g class="flame"><circle cx="77" cy="40" r="16" fill="transparent"/><ellipse cx="77" cy="40" rx="9" ry="14" fill="#ffb84d" opacity=".35"/><path d="M77 28q8 10 0 20q-8-10 0-20z" fill="#ffc94d"/><path d="M77 36q3 5 0 9q-3-4 0-9z" fill="#fff3c4"/></g>
+    <g class="flame"><circle cx="100" cy="36" r="16" fill="transparent"/><ellipse cx="100" cy="36" rx="9" ry="14" fill="#ffb84d" opacity=".35"/><path d="M100 24q8 10 0 20q-8-10 0-20z" fill="#ffc94d"/><path d="M100 32q3 5 0 9q-3-4 0-9z" fill="#fff3c4"/></g>
+    <g class="flame"><circle cx="123" cy="40" r="16" fill="transparent"/><ellipse cx="123" cy="40" rx="9" ry="14" fill="#ffb84d" opacity=".35"/><path d="M123 28q8 10 0 20q-8-10 0-20z" fill="#ffc94d"/><path d="M123 36q3 5 0 9q-3-4 0-9z" fill="#fff3c4"/></g>
+  </svg>
+  <div id="wish">Tap the flames to blow them out 🕯️</div>
+  <div id="cd"></div>
+  <button class="btn" onclick="fx(['🍃','🐒','💚','🌿'],16);go('story')">Begin the journey</button>
+  <div class="waves">
+    <svg viewBox="0 0 1200 110" preserveAspectRatio="none"><path fill="var(--sea)" fill-opacity=".35" d="M0 50C100 10 200 90 300 50S500 10 600 50 700 90 800 50 1000 10 1100 50 1150 70 1200 50V110H0Z"/></svg>
+    <svg viewBox="0 0 1200 110" preserveAspectRatio="none"><path fill="var(--bg)" d="M0 70C100 30 200 100 300 70S500 30 600 70 700 100 800 70 1000 30 1100 70 1150 85 1200 70V110H0Z"/></svg>
+  </div>
+</div>
+
+<section id="story"><h2 class="rv">Our Story</h2><p class="sub rv">The moments that made us</p><div class="tl" id="tl"></div></section>
+<section id="notes"><h2 class="rv">Field Notes on Sonia</h2><p class="sub rv">A naturalist’s observations</p><div class="notes" id="nt"></div></section>
+<section id="reasons"><h2 class="rv">Reasons I Love You</h2><p class="sub rv">Tap a leaf to read one</p><div class="grid" id="grid"></div><p class="count" id="count"></p></section>
+<section id="letters"><h2 class="rv">Open When…</h2><p class="sub rv">Little letters for whenever you need them</p><div class="env" id="env"></div></section>
+<section id="gallery"><h2 class="rv">Our Gallery</h2><p class="sub rv">Tap a photo to see it bigger</p><div class="gal" id="gal"></div></section>
+
+<section class="ocean" id="ocean"><div>
+  <h2 class="rv">Our Date with the Indian Ocean</h2><p class="sub rv">A promise, in ticket form</p>
+  <div class="pass rv" id="pass"></div>
+  <p class="sub" style="margin-bottom:14px">Where shall we float first? (tap one)</p>
+  <div class="dest" id="dest"></div>
+</div></section>
+
+<section class="fin" id="fin"><h2>One last thing</h2><p class="sub">Something I want you to know</p>
+  <button class="btn alt" onclick="document.getElementById('fin').classList.add('show');fx(['🐒','🦍','🌊','💚','🧅','🍃'],36)">Tap me</button>
+  <div class="msg" id="final"></div></section>
+<footer>Made with love, for Sonia 💚</footer>
+<dialog id="dlg"><div id="di"></div><h3 id="dt"></h3><p id="dp"></p><button class="btn" style="margin:0" onclick="dlg.close()">Close</button></dialog>
+
+<script>
+/* ====== EDIT YOUR CONTENT HERE ====== */
+var BIRTHDAY = ""; /* e.g. "2026-12-05" shows a countdown; leave empty to hide */
+var FINAL_MESSAGE = "Sonia, you’re kind, funny, and wild in the best way. Like Shrek says, there are layers to you, and I love every one. Happy birthday. Next stop: the Indian Ocean, together. 💚";
+
+var IMG = ['f.jpg', 'trip.jpg', 'pork.jpg', 'bed.jpg', 'pg.jpg', 'kfc.jpg']
+var STORY = [
+  {date:"Our first date", title:"Our Mall", text:"Hapa tulizunguka tukitafuta ile place ya gaming wuehh 😂 na ilikuwa tu hapo entrance", photo:IMG[0]},
+  {date:"Our first trip", title:"Hatukufika", text:"Ilikua tuende Rolf's place, kumbuka tukichukua cab then huyo jamaaa akatuacahanisha hapo ati hajui then kukaanza kunyesha, mashida zilikuwa mob 😂😂😂", photo:IMG[1]},
+  {date:"KFC", title:"Pesa nayo imeishia hapa sana", text:"Kama kungekua na trophy ya kukula KFC tungepewa 😂.", photo:IMG[5]},
+  {date:"Pork and Go", title:"Another year of you", text:"Hii platter ulikua unanipeleka mbio sana 😂😂.", photo:IMG[4]}
+];
+
+var NOTES = [
+  ["Species","Sonia sapiens (the rare, delightful kind)"],
+  ["Habitat","Anywhere near water, snacks, or a good animal documentary"],
+  ["Spirit animal","The cheeky, clever monkey 🐒"],
+  ["Favourite ogre","Shrek. Layers, like an onion 🧅"],
+  ["Known calls","A laugh that carries across the whole forest"],
+  ["Dream territory","The warm blue Indian Ocean 🌊"]
+];
+
+var REASONS = [
+  "Your laugh makes my whole day better.",
+  "You’re kind to everyone, even baboons.",
+  "You make ordinary moments feel special.",
+  "The way you light up around animals.",
+  "You believe in me even when I doubt myself.",
+  "You’re my favourite person to do nothing with.",
+  "Your smile. Obviously.",
+  "You make me want to be better.",
+  "You’re braver than you realise.",
+  "Home feels like wherever you are."
+  /* add more: one per year of her age is lovely */
+];
+
+var LETTERS = [
+  {icon:"😢", label:"Open when you’re sad", text:"I wish I could hug you right now.\n\nThis feeling won’t last, and you’re stronger than you know. I’m always here."},
+  {icon:"💭", label:"Open when you miss me", text:"I’m missing you too, probably right now.\n\nClose your eyes and picture the two of us by the ocean. See you soon."},
+  {icon:"😂", label:"Open when you need a laugh", text:"Remember that time… (your funniest memory goes here).\n\nAlso: Shrek would be proud of you."},
+  {icon:"🌧️", label:"Open when you’re stressed", text:"Breathe in. Breathe out. Imagine waves rolling in and out.\n\nYou’ve handled everything so far, and you’ll handle this too."},
+  {icon:"🌙", label:"Open when you can’t sleep", text:"Think of warm sand, gentle waves, and a sleepy monkey in a tree.\n\nGoodnight, Sonia. Sweet dreams."},
+  {icon:"🎂", label:"Open on your birthday", text:"Happy birthday! You deserve the best day ever.\n\nI love you more than words can say."}
+];
+
+var GALLERY = [IMG[2],IMG[0],IMG[1],IMG[3]]; /* photo links or data later; captions optional */
+
+var TRIP = {from:"Nairobi", to:"Indian Ocean", seat:"Right next to me", when:"Soon"};
+var DEST = [
+  ["🏝️","Diani Beach","White sand and monkeys on the coast"],
+  ["🐢","Zanzibar","Turquoise water and spice markets"],
+  ["🐠","Maldives","Clear lagoons and coral"],
+  ["🦎","Mauritius","Waterfalls and warm lagoons"],
+  ["🐳","Seychelles","Granite beaches and giant tortoises"]
+];
+/* ====== END EDIT ====== */
+
+function $(i){return document.getElementById(i)}
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!==undefined)e.textContent=h;return e}
+function go(i){$(i).scrollIntoView()}
+function photo(src,alt,fallback){var p=el("div","ph");if(src){var i=document.createElement("img");i.src=src;i.alt=alt;p.appendChild(i)}else p.textContent=fallback||"📷 add a photo";return p}
+$("final").textContent=FINAL_MESSAGE;
+
+STORY.forEach(function(s){var ev=el("div","ev rv"),c=el("div","card");
+  ev.appendChild(el("div","date",s.date));c.appendChild(photo(s.photo,s.title));c.appendChild(el("h3",0,s.title));c.appendChild(el("p",0,s.text));ev.appendChild(c);$("tl").appendChild(ev)});
+NOTES.forEach(function(n){var c=el("div","card rv");c.appendChild(el("b",0,n[0]));c.appendChild(el("span",0,n[1]));$("nt").appendChild(c)});
+
+var seen={};function upd(){$("count").textContent=Object.keys(seen).length+" of "+REASONS.length+" found"}
+REASONS.forEach(function(r,n){var b=el("button","flip rv"),i=el("div");i.appendChild(el("span","f",["🍃","🐒","🌿","💚"][n%4]));i.appendChild(el("span","b",r));b.appendChild(i);
+  b.onclick=function(){b.classList.toggle("on");seen[n]=1;upd()};$("grid").appendChild(b)});upd();
+
+var dlg=$("dlg");
+function openDlg(t,p,img){$("dt").textContent=t;$("dp").textContent=p;$("di").innerHTML="";if(img){var i=document.createElement("img");i.src=img;$("di").appendChild(i)}dlg.showModal()}
+LETTERS.forEach(function(l){var b=document.createElement("button");b.className="rv";b.appendChild(el("span","ic",l.icon));b.appendChild(el("small",0,l.label));
+  b.onclick=function(){b.classList.add("read");b.querySelector(".ic").textContent="💌";openDlg(l.label,l.text)};$("env").appendChild(b)});
+GALLERY.forEach(function(g,n){var p=photo(g,"Photo "+(n+1),"📷");p.className+=" rv";p.onclick=function(){openDlg("Memory "+(n+1),g?"":"Photo coming soon.",g)};$("gal").appendChild(p)});
+
+var pass=$("pass"),m=el("div","m"),s=el("div","s");
+m.appendChild(el("b",0,"Boarding pass"));m.appendChild(el("div","big","Nairobi → Ocean".replace("Nairobi",TRIP.from).replace("Ocean",TRIP.to)));
+var r=el("div","r");[["Passenger","Sonia"],["Seat",TRIP.seat],["Departure",TRIP.when],["Luggage","Sunscreen only"]].forEach(function(x){var d=el("div");d.appendChild(el("b",0,x[0]));d.appendChild(el("span",0,x[1]));r.appendChild(d)});
+m.appendChild(r);s.appendChild(el("div","big","🌊"));s.appendChild(el("b",0,"Admit one + me"));pass.appendChild(m);pass.appendChild(s);
+DEST.forEach(function(d){var c=el("div","card rv");c.appendChild(el("span",0,d[0]));c.appendChild(el("h3",0,d[1]));c.appendChild(el("p",0,d[2]));
+  c.onclick=function(){openDlg(d[1],"Adding "+d[1]+" to our list. 💚\n\n"+d[2]+".");fx(["🌊","🐚","💙"],12)};$("dest").appendChild(c)});
+
+var flames=document.querySelectorAll(".flame");
+flames.forEach(function(f){f.addEventListener("click",function(e){e.stopPropagation();f.classList.add("off");
+  var left=document.querySelectorAll(".flame:not(.off)").length;
+  $("wish").textContent=left?left+" to go… 🕯️":"Make a wish, Sonia! 🎉✨ (tap the cake to relight)";
+  if(!left)fx(["🎉","🐒","💚","🍃","✨"],26)})});
+$("cake").addEventListener("click",function(){flames.forEach(function(f){f.classList.remove("off")});$("wish").textContent="Tap the flames to blow them out 🕯️"});
+
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("in")})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(e){io.observe(e)});
+
+function fx(em,n){for(var i=0;i<n;i++)(function(i){setTimeout(function(){var h=el("div","fx",em[i%em.length]);h.style.left=Math.random()*94+"%";h.style.fontSize=(18+Math.random()*24)+"px";document.body.appendChild(h);setTimeout(function(){h.remove()},3600)},i*90)})(i)}
+document.addEventListener("click",function(e){var d=el("div","rip");d.style.left=(e.clientX-10)+"px";d.style.top=(e.clientY-10)+"px";document.body.appendChild(d);setTimeout(function(){d.remove()},900)});
+
+if(BIRTHDAY){var t=new Date(BIRTHDAY+"T00:00:00"),days=Math.ceil((t-new Date())/864e5);
+  $("cd").textContent=days>0?days+" sleeps until your birthday":(days===0?"Today’s the day! 🎉":"")}
+</script>
+</body>
+</html>
